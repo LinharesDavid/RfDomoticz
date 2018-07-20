@@ -1,0 +1,59 @@
+<RegisterScreen>
+    AnchorLayout:
+        anchor_x: 'center'
+        anchor_y: 'center'
+        Label:
+            id: signal_found
+            text: "Signal Found"
+            opacity: 0
+        Label:
+            id: siganl_code
+            text: "6379676"
+            opacity: 0
+        Label:
+            id: search_signal
+            text: "Searching signal"
+
+<TryScreen>
+    Button:
+        text: "suce"
+
+<MySignalsScreen>
+
+
+<Manager>:
+    id: screen_manager
+    register_screen: register_screen
+    try_screen: try_screen
+    my_signals_screen: my_signals_screen
+
+    RegisterScreen:
+        id: register_screen
+        name: 'registerScreen'
+        manager: screen_manager
+    TryScreen:
+        id: try_screen
+        name: 'tryScreen'
+        manager: screen_manager
+    MySignalsScreen:
+        id: my_signals_screen
+        name: 'mySignalsScreen'
+        manager: screen_manager
+
+BoxLayout:
+    orientation: 'horizontal'
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_x: 0.3
+        Button:
+            text: "Register signal"
+            on_press: screen_manager.current = 'registerScreen'
+        Button:
+            text: "Try signal"
+            on_press: screen_manager.current = 'tryScreen'
+        Button:
+            text: "My signals"
+            on_press: screen_manager.current = 'mySignalsScreen'
+        Button:
+    Manager:
+        id: screen_manager
