@@ -7,7 +7,7 @@ L'idée de RfDomoticz est de regroupé tous les objets communiquant par radio-fr
 ### Pourquoi se débarassez des télécommandes ?
 
 Premièrement car on ne sais jamais ou on les as rangés,
-puis si on a plus besoin des télécommandes car sais envoyé le signal qui fait réagir cette objet les utilisations sont multiples :
+puis si on a plus besoin des télécommandes car ons sais envoyé le signal qui fait réagir cette objet les utilisations sont multiples :
 * Intégration Google Home / Amazon Echo
 * Crées ses propres objets connéctés (avec des prises rf)
 * ect..
