@@ -1,24 +1,95 @@
+#: import main signalapp
+#: import ListAdapter kivy.adapters.listadapter.ListAdapter
+#: import ListItemButton kivy.uix.listview.ListItemButton
+
 <RegisterScreen>
-    AnchorLayout:
-        anchor_x: 'center'
-        anchor_y: 'center'
+    FloatLayout:
+        Button:
+            background_color: 0, 0.9, 1, 1
+            id: search_signal_button
+            text: "Search signal"
+            pos_hint: {'top': 0.55, 'right': 0.65}
+            size_hint: 0.3, 0.1
+            on_press: root.search_rf_signal()
         Label:
-            id: signal_found
-            text: "Signal Found"
+            id: signal_found_label
+            text: "Signal found : "
+            pos_hint: {'top': 1, 'right': 0.65}
+            size_hint: 0.3, 0.3
             opacity: 0
         Label:
-            id: siganl_code
-            text: "6379676"
+            id: signal_name_label
+            text: "Enter signal name"
+            pos_hint: {'top': 0.65, 'right': 0.65}
+            size_hint: 0.3, 0.3
             opacity: 0
         Label:
-            id: search_signal
-            text: "Searching signal"
+            id: signal_saved
+            text: "The signal : has been saved"
+            pos_hint: {'top': 0.65, 'right': 0.65}
+            size_hint: 0.3, 0.3
+            opacity: 0
+        Button:
+            background_color: 0, 0.9, 1, 1
+            id: home_search
+            text: "back"
+            pos_hint: {'top': 0.45, 'right': 0.65}
+            size_hint: 0.3, 0.1
+            opacity: 0
+            on_press: root.appear_first_screen()
+        TextInput:
+            id: signal_name_input
+            pos_hint: {'top': 0.45, 'right': 0.70}
+            size_hint: 0.4, 0.05
+            opacity: 0
+        Button:
+            background_color: 0, 0.9, 1, 1
+            id: save_signal
+            text: "Save"
+            pos_hint: {'top': 0.2}
+            size_hint: 1, 0.1
+            opacity: 0
+            on_press: root.save_signal()
+        Button:
+            background_color: 0, 0.9, 1, 1
+            id: cancel
+            text: "Cancel"
+            pos_hint: {'bottom': 1}
+            size_hint: 1, 0.1
+            opacity: 0
+            on_press: root.appear_first_screen()
 
 <TryScreen>
-    Button:
-        text: "suce"
+    FloatLayout:
+        Label:
+            id: signal_code_label
+            text: "Enter signal code"
+            pos_hint: {'top': 0.65, 'right': 0.65}
+            size_hint: 0.3, 0.3
+        TextInput:
+            id: signal_code_input
+            pos_hint: {'top': 0.45, 'right': 0.70}
+            size_hint: 0.4, 0.05
+        Button:
+            background_color: 0, 0.9, 1, 1
+            id: send_signal
+            text: "Try"
+            pos_hint: {'bottom': 1}
+            size_hint: 1, 0.1
+            on_press: root.try_signal()
 
 <MySignalsScreen>
+    ListView
+        id: signal_list_view
+        adapter:
+            ListAdapter(data=[], cls=main.SignalListButton)
+    Button:
+        background_color: 0, 0.9, 1, 1
+        id: send_selected_signal
+        text: "Send"
+        pos_hint: {'bottom': 1}
+        size_hint: 1, 0.1
+        on_press: root.send_selected_signal()
 
 
 <Manager>:
@@ -46,14 +117,18 @@ BoxLayout:
         orientation: 'vertical'
         size_hint_x: 0.3
         Button:
+            background_color: 0, 0.9, 1, 1
             text: "Register signal"
             on_press: screen_manager.current = 'registerScreen'
         Button:
+            background_color: 0, 0.9, 1, 1
             text: "Try signal"
             on_press: screen_manager.current = 'tryScreen'
         Button:
+            background_color: 0, 0.9, 1, 1
             text: "My signals"
             on_press: screen_manager.current = 'mySignalsScreen'
         Button:
+            background_color: 0, 0.9, 1, 1
     Manager:
         id: screen_manager
