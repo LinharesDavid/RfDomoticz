@@ -76,6 +76,8 @@ class MySignalsScreen(Screen):
     def getData(self):
         with open('signals.yml', 'r') as f:
             self.data = yaml.load(f)
+        if self.data is None:
+            return []
         return self.data
 
     def on_pre_enter(self, *args):
