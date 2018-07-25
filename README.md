@@ -1,3 +1,4 @@
+https://github.com/LinharesDavid/RfDomoticz
 # RfDomoticz
 
 ## Introduction
@@ -40,7 +41,11 @@ yaml parser : pyyaml
 
 `` pip install pyyaml``
 
+## Difficultés rencontrés
+Les plus grandes difficultés rencontrés furent majoritairement matériel, comprendre comment fonctionne les signaux ainsi que les récepteurs, être capable d'isoler le signal du bruit. D'autre difficultés furent de choisir un framework python pour des interface graphique, en effet j'ai trouvé que la mise en place d'interface graphique en python n'étais pas évidente avec les framework actuel pourtant le language s'y prête bien, aujourd'hui si je devais recommencer je partirais sur une interface web (django).
 
 ## Vidéo démo :
 * https://we.tl/YTjZqtp1Z4
 * https://youtu.be/K5TZ14WCZTg
+
+
