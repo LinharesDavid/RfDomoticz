@@ -41,4 +41,6 @@ yaml parser : pyyaml
 `` pip install pyyaml``
 
 
-## Vidéo démo : 
+## Vidéo démo :
+* https://we.tl/YTjZqtp1Z4
+* https://youtu.be/K5TZ14WCZTg
